@@ -1,4 +1,4 @@
-package com.boj;
+package com.boj.im;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,14 +10,13 @@ public class boj_11399 {
 
 	static int N, sum, total;
 	static int[] P;
-	static StringTokenizer st;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		 
 		N = Integer.parseInt(br.readLine()); 
 		P = new int[N];
 		
-		st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i = 0; i < N; i++) {
 			P[i] = Integer.parseInt(st.nextToken());
 		}

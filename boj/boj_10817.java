@@ -1,4 +1,4 @@
-package com.boj;
+package com.boj.im;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
