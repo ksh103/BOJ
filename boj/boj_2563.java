@@ -1,10 +1,11 @@
-package com.boj;
+package com.boj.im;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /* boj 2563번 - 색종이 */
+// 색종이 넓이 구하기
 public class boj_2563 {
 
 	static int N, X, Y, sum, SIZE = 100;
