@@ -2,7 +2,7 @@ package com.swea;
 
 import java.util.Scanner;
 
-/* swea 1247번 최적 경로 */
+/* swea 1247번 최적 경로 (D5) */
 public class swea_1247 {
 
 	static int  N, min;

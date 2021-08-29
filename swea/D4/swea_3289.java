@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /* 21.08.24 */
-/* swea 3289번 서로소 집합 */
+/* swea 3289번 서로소 집합 (D4) */
 public class swea_3289 {
 
 	static int testCase, N, M;

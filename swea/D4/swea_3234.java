@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/* swea 3234번 양팔 저울 */
+/* swea 3234번 양팔 저울 (D4) */
 public class swea_3234 {
 
 	static int T, N, cnt;
