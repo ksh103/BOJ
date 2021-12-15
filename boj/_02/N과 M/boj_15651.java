@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* boj 15650번 N과 M(2) */
-public class boj_15650 {
+/* boj 15651번 N과 M(3) */
+public class boj_15651 {
 
 	static int N, M;
 	static int[] arr;
@@ -22,16 +22,16 @@ public class boj_15650 {
 		isSelected = new boolean[N+1];
 		
 		/*
-		 * 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
-		 * 고른 수열은 오름차순이어야 한다.
+		 * 1부터 N까지 자연수 중에서 M개를 고른 수열
+		 * 같은 수를 여러 번 골라도 된다.
 		 */
 		
-		perm(1, 0);
+		perm(0);
 		
 		System.out.println(sb);
 	}
 	
-	static void perm(int strIdx, int cnt) {
+	static void perm(int cnt) {
 		// 기저 조건
 		if(cnt == M) {
 			for (int i = 0; i < M; i++) {
@@ -41,14 +41,10 @@ public class boj_15650 {
 			return;
 		}
 		
-		for (int i = strIdx; i <= N; i++) {
-			if(isSelected[i]) continue; // 사용중인 수면 다음 수로
-			
-			arr[cnt] = i; // 배열에 저장
-			isSelected[i] = true;
-			
-			perm(i, cnt + 1); // 다음 수로 이동
-			isSelected[i] = false;
+		for (int i = 1; i <= N; i++) {
+			// 같은 수를 여러 번 골라도 되므로 중복 체크 x
+			arr[cnt] = i;
+			perm(cnt + 1);
 		}
 	}
 }

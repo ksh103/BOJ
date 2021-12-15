@@ -2,31 +2,39 @@ package com.boj;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/* boj 15650번 N과 M(2) */
-public class boj_15650 {
+/* boj 15655번 N과 M(6) */
+public class boj_15655 {
 
 	static int N, M;
-	static int[] arr;
+	static int[] arr, result;
 	static boolean[] isSelected;
 	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		
+
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		
-		arr = new int[M];
-		isSelected = new boolean[N+1];
+		arr = new int[N];
+		result = new int[N]; // 결과를 담을 배열
+		isSelected = new boolean[N];
+		
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < N; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
 		
 		/*
-		 * 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
+		 * N개의 자연수 중에서 M개를 고른 수열
 		 * 고른 수열은 오름차순이어야 한다.
 		 */
 		
-		perm(1, 0);
+		Arrays.sort(arr);
+		perm(0, 0);
 		
 		System.out.println(sb);
 	}
@@ -35,19 +43,18 @@ public class boj_15650 {
 		// 기저 조건
 		if(cnt == M) {
 			for (int i = 0; i < M; i++) {
-				sb.append(arr[i] + " ");
-			}
-			sb.append("\n");
+				sb.append(result[i] + " ");
+			}sb.append("\n");
 			return;
 		}
 		
-		for (int i = strIdx; i <= N; i++) {
-			if(isSelected[i]) continue; // 사용중인 수면 다음 수로
+		for (int i = strIdx; i < N; i++) {
+			if(isSelected[i]) continue;
 			
-			arr[cnt] = i; // 배열에 저장
+			result[cnt] = arr[i];
 			isSelected[i] = true;
 			
-			perm(i, cnt + 1); // 다음 수로 이동
+			perm(i + 1, cnt + 1);
 			isSelected[i] = false;
 		}
 	}

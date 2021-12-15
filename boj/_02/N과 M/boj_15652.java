@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* boj 15650번 N과 M(2) */
-public class boj_15650 {
+/* boj 15652번 N과 M(4) */
+public class boj_15652 {
 
 	static int N, M;
 	static int[] arr;
@@ -17,13 +17,15 @@ public class boj_15650 {
 		
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		
+	
 		arr = new int[M];
 		isSelected = new boolean[N+1];
 		
 		/*
-		 * 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
-		 * 고른 수열은 오름차순이어야 한다.
+		 * 1부터 N까지 자연수 중에서 M개를 고른 수열
+		 * 같은 수를 여러 번 골라도 된다.
+		 * 고른 수열은 비내림차순이어야 한다.
+			- 길이가 K인 수열 A가 A1 ≤ A2 ≤ ... ≤ AK-1 ≤ AK를 만족하면, 비내림차순이라고 한다.
 		 */
 		
 		perm(1, 0);
@@ -42,13 +44,8 @@ public class boj_15650 {
 		}
 		
 		for (int i = strIdx; i <= N; i++) {
-			if(isSelected[i]) continue; // 사용중인 수면 다음 수로
-			
-			arr[cnt] = i; // 배열에 저장
-			isSelected[i] = true;
-			
-			perm(i, cnt + 1); // 다음 수로 이동
-			isSelected[i] = false;
+			arr[cnt] = i;
+			perm(i, cnt + 1);
 		}
 	}
 }
