@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* boj 2630¹ø »öÁ¾ÀÌ ¸¸µé±â */
+/* boj 2630ë²ˆ ìƒ‰ì¢…ì´ ë§Œë“¤ê¸° */
 public class boj_2630 {
 
 	static int N, white = 0, blue = 0;
@@ -31,7 +31,7 @@ public class boj_2630 {
 	
 	static void divide(int x, int y, int size) {
 		
-		// ±âÀúÁ¶°Ç
+		// ê¸°ì € ì¡°ê±´
 		if(checkPaper(x, y, size)) {
 			if(paper[x][y] == 0) white++;
 			else blue++;
@@ -39,10 +39,10 @@ public class boj_2630 {
 			return;
 		}
 		
-		int newSize = size / 2; // ¹İ ³ª´©±â
+		int newSize = size / 2; // í¬ê¸° ë°˜ìœ¼ë¡œ ë‚˜ëˆ„ê¸°
 		
 		
-		// Àç±Í¸¦ È°¿ëÇÑ ºĞÇÒÁ¤º¹
+		// ë¶„í•  ì •ë³µ
 		divide(x, y, newSize);
 		divide(x, y + newSize, newSize);
 		divide(x + newSize, y, newSize);
@@ -51,7 +51,7 @@ public class boj_2630 {
 	
 	static boolean checkPaper(int x, int y, int size) {
 		
-		// »öÁ¾ÀÌ »ö»ó È®ÀÎ
+		// ìƒ‰ì¢…ì´ ìƒ‰ ì²´í¬
 		int color = paper[x][y];
 		for (int i = x; i < x + size; i++) {
 			for (int j = y; j < y + size; j++) {
