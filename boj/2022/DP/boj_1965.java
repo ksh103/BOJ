@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/* boj 1956번 상자넣기 */
+/* boj 1965번 상자넣기 */
 public class boj_1965 {
 
 	static int n;
