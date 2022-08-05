@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/* boj 1103번 게임 */
 public class boj_1103 {
 
 	static int N, M, result;

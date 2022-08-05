@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/* boj 14248번 점프 점프 */
 public class boj_14248 {
 
 	static int N, S, count;
