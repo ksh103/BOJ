@@ -1,5 +1,10 @@
 class Solution {
 
+	// n = 1 → 1
+	// n = 2 → 2
+	// n = 3 → 3
+	// n = 4 → 5
+	// n = 5 → 8
     public long solution(int n) {
         long answer = 0;
         
