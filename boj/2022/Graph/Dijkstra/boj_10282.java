@@ -66,7 +66,7 @@ public class boj_10282 {
       }
    }
    
-   static private void solve(int c) {
+	private static void solve(int c) {
 	   PriorityQueue<Node> pq = new PriorityQueue<>();
 	   
 	   pq.offer(new Node(c, 0));
