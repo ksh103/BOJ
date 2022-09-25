@@ -10,7 +10,7 @@ class Solution {
                 if(sum == n) {
                     answer++;
                     break;
-                } else if (sum > n) {
+                } else if (sum > n) { // 합 > n 조건을 넣어야 시간 초과가 안 남.
                     break;
                 }
             }
