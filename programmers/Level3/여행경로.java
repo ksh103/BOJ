@@ -17,17 +17,17 @@ class Solution {
         
         // 알파벳 오름차순 정렬
         Arrays.sort(tickets, new Comparator<String[]>() {
-			@Override
-			public int compare(String[] o1, String[] o2) {
+            @Override
+            public int compare(String[] o1, String[] o2) {
                 // 출발 공항이 같을 때
-				if(o1[0].equals(o2[0])) {
+                if(o1[0].equals(o2[0])) {
                     // 도착 공항 오름차순
-					return o1[1].compareTo(o2[1]);
-				}
+                    return o1[1].compareTo(o2[1]);
+                }
                 // 오름차순
-				return o1[0].compareTo(o2[0]);
-			}
-		});
+                return o1[0].compareTo(o2[0]);
+            }
+        });
         
         for(int i = 0; i < SIZE; i++) {
             String start = tickets[i][0];
